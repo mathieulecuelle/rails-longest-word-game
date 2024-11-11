@@ -1,0 +1,15 @@
+<div id="new_game">
+  <h1>New game</h1>
+  <p><p><p><p>
+  <% @letters.each do |let| %>
+    <div id="let_tab"><%= let.capitalize %></div>
+  <% end %>
+  <p><p><p><p>
+  <form action="/score" method="POST" data-turbo="false" class="form-inline">
+    <p>What is the longest word you can find?</p>
+    <input type="text" class="form-control" name="text" id="text" placeholder="Type your text here...">
+    <p><p><p><p>
+    <button type="submit" class="btn btn-primary mb-2">Play</button>
+    <%= hidden_field_tag :hidden_tab, @letters %>
+  </form>
+</div>
